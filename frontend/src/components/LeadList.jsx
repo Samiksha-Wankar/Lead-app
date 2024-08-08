@@ -41,7 +41,7 @@ const LeadList = ({ leads, fetchLeads }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/leads/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/leads/${id}`);
       fetchLeads();
     } catch (error) {
       console.error(error);
@@ -51,7 +51,7 @@ const LeadList = ({ leads, fetchLeads }) => {
   const handleUpdate = async () => {
     if (validateLead()) {
       try {
-        await axios.put(`http://localhost:5000/api/leads/${editingLead._id}`, updatedLead);
+        await axios.put(`${import.meta.env.VITE_API_URL}/api/leads/${editingLead._id}`, updatedLead);
         fetchLeads();
         setEditingLead(null);
         setUpdatedLead({
@@ -187,7 +187,6 @@ const LeadList = ({ leads, fetchLeads }) => {
           </table>
         </div>
       </div>
-
     </div>
   );
 };

@@ -10,7 +10,7 @@ const LeadForm = ({ fetchLeads }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/leads', { email, name, number, product });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/leads`, { email, name, number, product });
       fetchLeads();
       setEmail('');
       setName('');
