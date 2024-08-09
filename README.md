@@ -25,6 +25,31 @@ The Lead App provides a seamless experience for managing lead data with function
 - **Authentication**: Firebase
 - **Stack**: MERN (MongoDB, Express.js, React, Node.js)
 
+## Important Notice: MongoDB URI Configuration
+
+⚠️ **WARNING:** The MongoDB URI must be added and updated by the user before running the application.
+
+To ensure the application connects to the correct MongoDB instance, please follow these steps:
+
+1. **Locate the Environment Variables File:**
+   - The MongoDB URI should be specified in a `.env` file or directly in the application's configuration file (e.g., `config.js`).
+
+2. **Add Your MongoDB URI:**
+   - In the `.env` file, add the following line with your MongoDB URI:
+     ```plaintext
+     MONGODB_URI=your_mongodb_uri_here
+     ```
+   - **Note:** The URI in the backend/.env is a placeholder. **DO NOT COPY** it directly. Replace it with your actual MongoDB URI.
+
+3. **Ensure the URI is Correct:**
+   - Double-check the URI for accuracy. An incorrect URI will prevent the application from connecting to the MongoDB database.
+
+4. **Keep the URI Secure:**
+   - Never commit the `.env` file or any configuration file containing the MongoDB URI to a public repository. Make sure the `.env` file is added to your `.gitignore` to prevent accidental exposure.
+
+Failure to configure the MongoDB URI correctly will result in connection errors, and the application may not function as intended.
+
+
 ## Setup and Installation
 **Prerequisites**
 - Node.js (v16 or later)
